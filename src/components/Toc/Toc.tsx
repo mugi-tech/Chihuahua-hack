@@ -1,30 +1,26 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import tocbot from "tocbot";
-import classes from "./Toc.module.css";
+import "./Toc.css";
 
 export default function Toc() {
   useEffect(() => {
     tocbot.init({
       tocSelector: ".toc",
-      contentSelector: ".body",
+      contentSelector: ".znc",
       headingSelector: "h2, h3",
     });
 
-    return () => tocbot.destroy();
+    return () => {
+      tocbot.destroy();
+    };
   }, []);
 
   return (
-    <>
-      {/* 本文 */}
-      <div className="body">
-        <h2 id="2">見出し2</h2>
-        <h3 id="3">見出し3</h3>
-        <h2>見出し2</h2>
-      </div>
-      {/* 目次 */}
+    <div className="rounded-lg bg-white p-4">
+      <p className="font-extrabold">目次</p>
       <nav className="toc" />
-    </>
+    </div>
   );
 }

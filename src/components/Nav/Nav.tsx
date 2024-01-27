@@ -4,52 +4,44 @@ import React from "react";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useRouter, useParams } from "next/navigation";
 
-export default function Nav() {
+type Props = {
+  navId?: string;
+};
+
+export default function Nav({ navId }: Props) {
   const router = useRouter();
   const params = useParams();
-  const id = params.id == null ? "top" : (params.id as string);
+  const id =
+    navId == null ? (params.id == null ? "top" : (params.id as string)) : navId;
   return (
     <Tabs className="container mx-auto px-4" defaultValue={id}>
-      <TabsList className="bg-white">
+      <TabsList className="h-auto bg-white p-0">
         <TabsTrigger
           value="top"
           onClick={() => {
             router.push("/");
           }}
+          className="data-[state=active]:bg-button data-[state=active]:text-white"
         >
-          TOP
+          Top
         </TabsTrigger>
         <TabsTrigger
-          value="study"
+          value="blogs"
           onClick={() => {
-            router.push("/categories/study");
+            router.push("/blogs/new");
           }}
+          className="data-[state=active]:bg-button data-[state=active]:text-white"
         >
-          勉強
-        </TabsTrigger>
-        <TabsTrigger
-          value="it"
-          onClick={() => {
-            router.push("/categories/it");
-          }}
-        >
-          IT
-        </TabsTrigger>
-        <TabsTrigger
-          value="note"
-          onClick={() => {
-            router.push("/categories/note");
-          }}
-        >
-          ブログ
+          Blog
         </TabsTrigger>
         <TabsTrigger
           value="about"
           onClick={() => {
             router.push("/about");
           }}
+          className="data-[state=active]:bg-button data-[state=active]:text-white"
         >
-          書いてる人
+          About
         </TabsTrigger>
       </TabsList>
     </Tabs>

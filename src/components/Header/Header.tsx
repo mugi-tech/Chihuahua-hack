@@ -9,10 +9,10 @@ export default function Header() {
       <div className="container mx-auto flex items-center justify-between p-4">
         <Link href="/">
           <Image
-            src="/image/title.png"
+            src="/image/ChihuahuasHack.png"
             alt="title"
-            width={180}
-            height={50}
+            width={280}
+            height={40}
             unoptimized={true}
           />
         </Link>

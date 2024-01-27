@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { Article } from "@/lib/type";
-import Image from "next/image";
+import { convertDateFormat } from "@/lib/utils";
 import Link from "next/link";
 import React from "react";
 
@@ -10,7 +10,7 @@ type Props = {
 
 export default function ArticleCard({ article }: Props) {
   return (
-    <div className="mx-auto max-w-md overflow-hidden rounded-xl bg-white shadow-md md:max-w-2xl">
+    <div className="w-auto overflow-hidden rounded-xl bg-white shadow-md md:w-auto">
       <div className="md:flex">
         <div className="md:shrink-0">
           <Link href={`/articles/${article.id}`}>
@@ -22,7 +22,7 @@ export default function ArticleCard({ article }: Props) {
             </div>
           </Link>
         </div>
-        <div className="bg-cardBackground2 p-6">
+        <div className="w-full bg-cardBackground2 p-6">
           <Link href={`/articles/${article.id}`}>
             <p className="mt-1 block text-lg font-extrabold leading-tight text-paragraph hover:underline">
               {article.title}
@@ -30,7 +30,9 @@ export default function ArticleCard({ article }: Props) {
             <p className="mt-2 line-clamp-2 text-slate-500">
               {article.description}
             </p>
-            <p className="mt-2 text-sm text-slate-500">{article.updatedAt}</p>
+            <p className="mt-2 text-sm text-slate-500">
+              {convertDateFormat(article.updatedAt)}に更新
+            </p>
           </Link>
         </div>
       </div>

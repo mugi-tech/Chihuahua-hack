@@ -2,7 +2,6 @@
 
 import { useCallback, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import styles from "./index.module.css";
 import { FaSearch } from "react-icons/fa";
 
 export default function Search() {

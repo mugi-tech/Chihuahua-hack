@@ -1,0 +1,15 @@
+.toc {
+  .toc-link {
+    @apply relative flex w-full py-1.5 pl-9 text-sm text-muted-foreground hover:text-foreground;
+    &:before {
+      @apply absolute left-4 top-3 h-[10px] w-[10px] rounded-full border-2 border-cardBackground2 bg-cardBackground2 content-[''];
+    }
+  }
+
+  .is-active-link {
+    @apply font-bold text-foreground;
+    &:before {
+      @apply bg-button outline-button;
+    }
+  }
+}

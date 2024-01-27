@@ -5,11 +5,17 @@ export default function AboutMain() {
   return (
     <Tabs defaultValue="about" className="h-full">
       <div className="mx-auto flex max-w-md justify-center md:max-w-3xl md:justify-start">
-        <TabsList className="border-b-paragraph bg-white">
-          <TabsTrigger value="about" className="px-10">
+        <TabsList>
+          <TabsTrigger
+            value="about"
+            className="px-10 data-[state=active]:bg-button data-[state=active]:text-white"
+          >
             About
           </TabsTrigger>
-          <TabsTrigger value="works" className="px-10">
+          <TabsTrigger
+            value="works"
+            className="px-10 data-[state=active]:bg-button data-[state=active]:text-white"
+          >
             Works
           </TabsTrigger>
         </TabsList>

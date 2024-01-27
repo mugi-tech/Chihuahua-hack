@@ -2,6 +2,7 @@ import React from "react";
 import { Avatar, AvatarImage, AvatarFallback } from "../ui/avatar";
 import { FaGithubSquare, FaInstagram } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
+import Link from "next/link";
 
 export default function AboutHeader() {
   return (
@@ -16,16 +17,19 @@ export default function AboutHeader() {
           </div>
           <div className="p-6">
             <h3 className="flex justify-center text-2xl font-extrabold text-paragraph md:flex md:justify-start md:text-4xl">
-              mugi@危機感ドリブン
+              Chihuahua@
             </h3>
             <p className="mt-2 text-headline">
-              SI企業でぬくぬく育ちすぎたSier。
-              勉強の習慣を身につける為、ブログを立ち上げました。
+              どこぞのSier。 クラウドが好き。
+              勉強した事を忘れないためにブログ始めました。
             </p>
             <div className="mt-2 flex justify-center gap-3 md:justify-start">
-              <FaGithubSquare size="2rem" className="text-headline" />
-              <FaInstagram size="2rem" className="text-headline" />
-              <FaSquareXTwitter size="2rem" className="text-headline" />
+              <Link href="https://github.com/mugi-tech">
+                <FaGithubSquare size="2rem" className="text-headline" />
+              </Link>
+              <Link href="https://twitter.com/mugitechhh">
+                <FaSquareXTwitter size="2rem" className="text-headline" />
+              </Link>
             </div>
           </div>
         </div>

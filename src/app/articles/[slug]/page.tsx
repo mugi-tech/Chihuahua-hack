@@ -1,6 +1,9 @@
+import Article from "@/components/Article/Article";
 import Toc from "@/components/Toc/Toc";
 import React from "react";
 
+import { articleList } from "@/mockdata/mockdata";
+
 export default function page() {
-  return <Toc />;
+  return <Article article={articleList[0]}></Article>;
 }
