@@ -1,9 +1,14 @@
 import Article from "@/components/Article/Article";
-import Toc from "@/components/Toc/Toc";
+import { getDetail } from "@/lib/api";
 import React from "react";
 
-import { articleList } from "@/mockdata/mockdata";
-
-export default function page() {
-  return <Article article={articleList[0]}></Article>;
+type Props = {
+  params: {
+    slug: string;
+  };
+};
+export default async function page({ params }: Props) {
+  const { slug } = params;
+  const article = await getDetail(slug);
+  return <Article article={article}></Article>;
 }
